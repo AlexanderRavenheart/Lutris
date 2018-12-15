@@ -158,10 +158,12 @@ class RunnersDialog(GtkBuilderDialog):
     def on_remove_confirm_clicked(self, widget, runner, runner_label):
         runner.uninstall()
         self.refresh_button.emit("clicked")
+        self.remove_confirm_dialog.destroy()
 
     def on_remove_all_clicked(self, widget, runner, runner_label):
         runner.uninstall()
         self.refresh_button.emit("clicked")
+        self.all_versions_dialog.destroy()
 
     def on_cancel_confirm_clicked(self, widget):
         self.remove_confirm_dialog.destroy()
